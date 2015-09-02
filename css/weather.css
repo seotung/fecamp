@@ -11,7 +11,7 @@ h1 {
     width: 35px;
     height: 35px;
     background-color: #000;
-    background-image: url(img/pc.png);
+    background-image: url(../img/pc.png);
     background-repeat: no-repeat;
 }
 
@@ -20,7 +20,7 @@ h1 {
     width: 35px;
     height: 35px;
     background-color: #000;
-    background-image: url(img/pc.png);
+    background-image: url(../img/pc.png);
     background-repeat: no-repeat;
     background-size: 400px 120px;
 }
