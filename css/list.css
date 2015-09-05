@@ -1,0 +1,72 @@
+@charset "utf-8"
+/* common css */
+body {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/* 상품 목록 */
+.shopping_list {
+    overflow: hidden;
+    margin: 0 -10px;
+    padding: 0 5px;
+}
+
+.shopping_item {
+/*
+    float: left;
+    width: 20%;
+*/
+}
+
+.shopping_item .box {
+    padding: 0 5px;
+}
+
+.thumb {
+    height: 200px;
+    border: 1px solid;
+    background-image: url(../img/item1.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media screen and (min-width:600px) {
+    .shopping_item {
+        float: left;
+        width: 50%;  
+    }
+}
+@media screen and (min-width:700px) {
+    .shopping_item {
+        width: 33.3%;
+    }
+}
+
+@media screen and (min-width:800px) {
+    .shopping_item {
+        width: 25%;
+    }
+}
+
+@media screen and (min-width:900px) {
+    .shopping_item {
+        width: 20%;
+    }
+}
+
+@media all and (orientation: landscape) {
+    .thumb {
+        height: 100px;
+    }
+}
