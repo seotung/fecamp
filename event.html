@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            jQuery(function($){
+//                function up(){
+//                    $('#box').animate({left: '+=300px'}, right)
+//                };
+//                function right(){
+//                  $('#box').animate({top: '+=300px'}, down)
+//                };
+//                function down(){
+//                  $('#box').animate({left: '-=300px'}, left)
+//                };
+//                function left(){
+//                  $('#box').animate({top: '-=300px'}, up)
+//                };
+//                up();
+//                $('button').on('click', function(event){
+//                  $('#box').stop();
+//                });
+                  
+                  $('#box').on('mousedown', function(event){
+                    var top = parseInt($(this).css('top')), left = parseInt($(this).css('left'));
+                    var startX = event.pageX, startY = event.pageY;
+                    var $box = $(this);
+                      
+                    event.preventDefault();
+                      
+                    $(document).on('mousemove.drag', function(event){
+                    var dx = event.pageX - startX, dy = event.pageY - startY;
+                    var newTop = top + dy, newLeft = left + dx;
+                    $box.css({top:newTop, left:newLeft});
+                     });
+                    $(document).on('mouseup.drag', function(event){
+                     $(this).off('mousemove.drag mouseup.drag');
+                    });
+                  });
+            });
+        </script>
+        
+        <style>
+            #box {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                width: 100px;
+                height: 100px;
+                background: green;
+            }
+            
+            #but {
+                position: absolute;
+                top: 100px;
+                left: 100px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="box"></div>
+        <button id="but">멈추어라</button>
+    </body>
+    
+</html>
